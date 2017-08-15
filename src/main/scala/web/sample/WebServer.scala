@@ -20,12 +20,12 @@ object WebServer {
     val route =
       path("hello") {
         get {
-          complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "<h1>Say hello to akka-http</h1>"))
+          complete(HttpEntity(ContentTypes.`text/plain`, "Say hello to akka-http"))
         }
       } ~
      path("welcome") {
       get{
-        complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "Welcome to Akka-http"))
+        complete(HttpEntity(ContentType(MediaTypes.`text/html`, HttpCharsets.`UTF-8`), "<h1>Welcome to Akka-http</h1>"))
       }
     }
 
